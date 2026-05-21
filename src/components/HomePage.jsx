@@ -46,11 +46,6 @@ function HomePage() {
           <h1 className="text-3xl md:text-4xl font-bold text-teal-600 text-center md:text-left">
             Hello! I&apos;m Shervin.
           </h1>
-          <ul className="mt-4 md:mt-6 ml-6 text-base md:text-lg leading-relaxed text-gray-700 space-y-1 list-disc">
-            <li>Experience or role placeholder</li>
-            <li>Another bullet placeholder</li>
-            <li>Personal projects</li>
-          </ul>
           <div className="flex justify-center md:justify-start">
             <Link to="/projects">
               <button
