@@ -25,7 +25,9 @@ function HomePage() {
               <Github size={32} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/shervin-n/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-teal-600 transition-colors"
               aria-label="LinkedIn"
             >
@@ -43,13 +45,9 @@ function HomePage() {
 
         <div className="flex flex-col justify-start w-full md:w-2/3 px-4 md:px-0">
           <h1 className="text-3xl md:text-4xl font-bold text-teal-600 text-center md:text-left">
-            Hello! I&apos;m [Your Name].
+            Hello! I&apos;m Shervin.
           </h1>
-          <p className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-gray-700">
-            Short bio goes here. Add a paragraph about who you are and what you
-            work on.
-          </p>
-          <ul className="mt-4 ml-6 text-base md:text-lg leading-relaxed text-gray-700 space-y-1 list-disc">
+          <ul className="mt-4 md:mt-6 ml-6 text-base md:text-lg leading-relaxed text-gray-700 space-y-1 list-disc">
             <li>Experience or role placeholder</li>
             <li>Another bullet placeholder</li>
             <li>Personal projects</li>

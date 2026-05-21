@@ -31,7 +31,7 @@ const Header = () => {
               to="/"
               className="text-2xl sm:text-3xl md:text-4xl font-semibold text-teal-600 hover:text-teal-700 transition-colors font-inter"
             >
-              Your Name
+              Shervin
             </Link>
           </div>
 
