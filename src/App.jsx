@@ -1,13 +1,18 @@
-import './App.css'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import HomePage from './components/HomePage.jsx'
+import ProjectsPage from './components/ProjectsPage.jsx'
+import News from './components/News.jsx'
 
-export default function App() {
+function App() {
   return (
-    <main className="landing">
-      <h1 className="landing__title">Hello</h1>
-      <p className="landing__text">
-        There isn’t much here — this page is just a quiet placeholder. Thanks
-        for stopping by.
-      </p>
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/news" element={<News />} />
+      </Routes>
+    </Router>
   )
 }
+
+export default App
