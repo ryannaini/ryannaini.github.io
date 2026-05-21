@@ -10,12 +10,11 @@ function HomePage() {
 
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 py-8 md:py-12 px-4 md:px-6 bg-white/80 backdrop-blur-sm shadow-md h-auto min-h-[500px] max-w-7xl mx-auto mt-4 md:mt-8 rounded-lg">
         <div className="flex flex-col items-center w-full md:w-1/3">
-          <div
-            className="rounded-full w-48 h-48 md:w-72 md:h-72 border-4 border-teal-200 bg-gray-100 shadow-lg flex items-center justify-center text-gray-400 text-sm"
-            aria-hidden
-          >
-            Photo
-          </div>
+          <img
+            src="/images/profile.png"
+            alt="Shervin"
+            className="rounded-full w-48 h-48 md:w-72 md:h-72 border-4 border-teal-200 object-cover shadow-lg"
+          />
           <div className="mt-4 md:mt-6 flex gap-4 md:gap-6">
             <a
               href="#"
