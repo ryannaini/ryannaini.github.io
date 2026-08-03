@@ -2,70 +2,97 @@ import { Link } from 'react-router-dom'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+import NeuronLattice from './NeuronLattice.jsx'
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-inter flex flex-col">
+    <div className="relative min-h-screen bg-navy text-ink flex flex-col font-sans">
+      <div className="pointer-events-none fixed inset-0 z-0">
+        <NeuronLattice />
+      </div>
+      <div className="relative z-10 flex min-h-screen flex-col">
       <Header />
 
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 py-8 md:py-12 px-4 md:px-6 bg-white/80 backdrop-blur-sm shadow-md h-auto min-h-[500px] max-w-7xl mx-auto mt-4 md:mt-8 rounded-lg">
-        <div className="flex flex-col items-center w-full md:w-1/3">
-          <img
-            src="/images/profile.png"
-            alt="Shervin"
-            className="rounded-full w-48 h-48 md:w-72 md:h-72 border-4 border-teal-200 object-cover shadow-lg"
-          />
-          <div className="mt-4 md:mt-6 flex gap-4 md:gap-6">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-teal-600 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={32} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shervin-n/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-teal-600 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={32} />
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-teal-600 transition-colors"
-              aria-label="Email"
-            >
-              <Mail size={32} />
-            </a>
-          </div>
-        </div>
+      <main className="relative flex-1 overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-32 -left-24 h-[28rem] w-[28rem] rounded-full bg-sky/10 blur-3xl"
+        />
 
-        <div className="flex flex-col justify-start w-full md:w-2/3 px-4 md:px-0">
-          <h1 className="text-3xl md:text-4xl font-bold text-teal-600 text-center md:text-left">
-            Hello! I&apos;m Shervin.
-          </h1>
-          <div className="flex justify-center md:justify-start">
-            <Link to="/projects">
-              <button
-                type="button"
-                className="mt-6 md:mt-8 px-6 md:px-8 py-2 md:py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-lg text-base md:text-lg font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
-              >
-                View Projects
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
+        <section className="relative max-w-6xl mx-auto px-6 md:px-8 pt-16 md:pt-24 pb-16 md:pb-20">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <p className="text-xs md:text-sm tracking-[0.2em] uppercase text-muted">
+                Northwestern University
+              </p>
+              <h1 className="mt-3 font-display text-5xl md:text-6xl font-semibold text-ink tracking-tight">
+                Shervin
+              </h1>
+              <p className="mt-4 text-lg md:text-xl text-muted max-w-md leading-relaxed">
+                Building and learning — projects, ideas, and what I&apos;m working
+                on next.
+              </p>
 
-      <section className="bg-teal-50/50 backdrop-blur-sm border-t border-teal-100/20 py-4 md:py-6 mt-8 md:mt-12">
-        <p className="text-center text-sm md:text-base text-gray-700 font-medium max-w-4xl mx-auto px-4">
-          Latest news: <span className="text-gray-500">Nothing yet.</span>
-        </p>
-      </section>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-navy-deep hover:bg-sky-bright transition-colors"
+                >
+                  Projects
+                </Link>
+                <Link
+                  to="/news"
+                  className="inline-flex items-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-ink hover:border-sky/50 hover:text-sky transition-colors"
+                >
+                  News
+                </Link>
+                <div className="flex items-center gap-3 ml-1">
+                  <a
+                    href="https://github.com/ryannaini"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted hover:text-sky transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <Github size={22} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/shervin-n/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted hover:text-sky transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={22} />
+                  </a>
+                  <a
+                    href="mailto:shervinnaini2028@u.northwestern.edu"
+                    className="text-muted hover:text-sky transition-colors"
+                    aria-label="Email"
+                  >
+                    <Mail size={22} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:pt-10">
+              <img
+                src="/images/profile.png"
+                alt="Shervin"
+                className="mb-6 w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border border-white/15 shadow-lg shadow-black/40"
+              />
+              <p className="text-base md:text-lg text-muted leading-relaxed">
+                Hi! I&apos;m Shervin. This site is a simple home for my projects
+                and updates — more content coming soon.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
+      </div>
     </div>
   )
 }

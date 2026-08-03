@@ -4,10 +4,12 @@
 
 body {
   margin: 0;
+  background-color: #070b14;
+  color: #ebf1ff;
   font-family:
-    Inter,
+    'Source Sans 3',
+    system-ui,
     -apple-system,
-    BlinkMacSystemFont,
     'Segoe UI',
     Roboto,
     sans-serif;
