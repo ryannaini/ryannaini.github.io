@@ -10,7 +10,7 @@ export default {
           soft: '#121a2b',
         },
         ink: '#ebf1ff',
-        muted: '#9aa8c7',
+        muted: '#d5dceb',
         sky: {
           DEFAULT: '#72b8ff',
           bright: '#8fc6ff',

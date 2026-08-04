@@ -1,5 +1,6 @@
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import HomePage from './components/HomePage.jsx'
+import AboutPage from './components/AboutPage.jsx'
 import ProjectsPage from './components/ProjectsPage.jsx'
 import News from './components/News.jsx'
 
@@ -8,6 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/news" element={<News />} />
       </Routes>

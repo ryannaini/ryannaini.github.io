@@ -13,17 +13,13 @@ const Header = () => {
   return (
     <header className="w-full border-b border-white/10 bg-navy/80 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <nav className="flex items-center justify-between h-16 md:h-20">
-          <Link
-            to="/"
-            className="font-display text-xl md:text-2xl font-semibold text-ink tracking-tight"
-          >
-            Shervin
-          </Link>
-
+        <nav className="flex items-center justify-end h-16 md:h-20">
           <div className="hidden sm:flex sm:items-center sm:gap-8">
             <Link to="/" className={linkClass('/')}>
               Home
+            </Link>
+            <Link to="/about" className={linkClass('/about')}>
+              About Me
             </Link>
             <Link to="/projects" className={linkClass('/projects')}>
               Projects
@@ -58,6 +54,13 @@ const Header = () => {
           <div className="sm:hidden pb-4 flex flex-col gap-3">
             <Link to="/" className={linkClass('/')} onClick={() => setIsMobileMenuOpen(false)}>
               Home
+            </Link>
+            <Link
+              to="/about"
+              className={linkClass('/about')}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About Me
             </Link>
             <Link
               to="/projects"

@@ -16,3 +16,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(114, 184, 255, 0.35) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(114, 184, 255, 0.35);
+  border-radius: 999px;
+}
