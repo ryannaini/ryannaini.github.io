@@ -51,6 +51,44 @@ const projectsData = [
     ),
   },
   {
+    id: 'ublox-antenna-monitoring',
+    title: 'Ublox GPS Antenna Monitoring',
+    shortDescription:
+      'Live UBX antenna health checks on Jetson Orin: parse MON-RF over serial to catch shorts, opens, and power issues before GPS silently fails.',
+    labels: ['Robotics & Embedded Systems'],
+    tags: ['Jetson Orin', 'Ublox', 'Python', 'UBX'],
+    image: '/images/projects/zed-f9p-antenna.png',
+    detailImage: '/images/projects/zed-f9p-antenna.png',
+    fillDetailImage: true,
+    fullContent: (
+      <>
+        <p>
+          During integration work on a Jetson Orin platform with a Ublox GPS
+          module, I built a lightweight way to monitor antenna health directly
+          from the serial stream. GPS messages alone can look fine even when the
+          antenna path is shorted, open, or unpowered, so the useful signal is
+          in the module&apos;s UBX-MON-RF diagnostics.
+        </p>
+        <p>
+          I wrote a small Python parser that reads raw bytes from
+          /dev/ttyTHS0, finds MON-RF packets, and prints each antenna
+          block&apos;s ANT_STATUS and ANT_POWER in plain language (OK, SHORT,
+          OPEN, and whether power is on). That made short detection and
+          open-circuit checks something I could verify live on the robot
+          without a heavy tooling stack.
+        </p>
+        <p>
+          Along the way I also worked through Orin service control
+          (supervisorctl), GPS reset and reconfigure flows, and how antenna
+          voltage, polarity, and auto-recovery settings fit together. The
+          takeaway was a practical debugging habit: separate module
+          communication from antenna electrical health, then prove each one
+          independently.
+        </p>
+      </>
+    ),
+  },
+  {
     id: 'audio-spectrum-visualizer',
     title: 'Audio Spectrum Visualizer',
     shortDescription:
@@ -199,6 +237,47 @@ const projectsData = [
           counting datasets by class density, annotation type, and video length,
           and organized them into a shared spreadsheet the team could use when
           choosing what to evaluate next.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'eeg-alzheimers',
+    title: "Alzheimer's EEG Classification",
+    shortDescription:
+      'Binary AD vs. healthy classification from resting-state EEG using spectral band-power features and classical ML.',
+    labels: ['ML / Research'],
+    tags: ['Machine Learning', 'EEG', 'scikit-learn', 'MNE'],
+    image: '/images/projects/eeg-alzheimers-dashboard.png',
+    detailImages: [
+      '/images/projects/eeg-alzheimers-dashboard.png',
+      '/images/projects/eeg-alzheimers-roc.png',
+    ],
+    github: 'https://github.com/ryannaini/eeg-classification-alzheimers',
+    fullContent: (
+      <>
+        <p>
+          I built a pipeline to classify Alzheimer&apos;s Disease vs. healthy
+          controls from resting-state scalp EEG, using the OpenNeuro DS004504
+          dataset (65 subjects, 19 channels, eyes-closed). The goal was to turn
+          messy brainwave recordings into features a model could actually learn
+          from.
+        </p>
+        <p>
+          After band-pass filtering and PSD extraction with Welch&apos;s method,
+          I averaged absolute power across channels into five canonical bands
+          (delta through gamma) and also computed relative power so subjects
+          with different skull/electrode conditions could be compared fairly.
+          Stratified 5-fold cross-validation with sklearn Pipelines kept
+          preprocessing inside each training fold to avoid leakage.
+        </p>
+        <p>
+          Random Forest and RBF SVC both landed around the low-to-mid 70s in
+          accuracy. Looking at feature importances, theta and alpha drove most
+          of the decisions, which lines up with the clinical idea of EEG
+          slowing in Alzheimer&apos;s. Along the way I got a real feel for
+          artifact cleaning, signal-to-feature work, and why small medical
+          datasets need careful validation.
         </p>
       </>
     ),

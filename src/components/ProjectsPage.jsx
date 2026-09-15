@@ -240,6 +240,8 @@ function ProjectsPage() {
 
               const stackImages = selectedProject.stackDetailImages
 
+              const fillImage = selectedProject.fillDetailImage
+
               return popupImages.length > 0 && !stackImages ? (
                 <div
                   className={`mt-5 gap-4 ${
@@ -251,12 +253,20 @@ function ProjectsPage() {
                   {popupImages.map((src) => (
                     <div
                       key={src}
-                      className="rounded-xl overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center min-h-56 sm:min-h-64"
+                      className={`rounded-xl overflow-hidden border border-gray-200 ${
+                        fillImage
+                          ? 'bg-black'
+                          : 'bg-gray-50 flex items-center justify-center min-h-56 sm:min-h-64'
+                      }`}
                     >
                       <img
                         src={src}
                         alt={selectedProject.title}
-                        className="max-w-full max-h-56 sm:max-h-64 object-contain bg-white"
+                        className={
+                          fillImage
+                            ? 'w-full h-auto block'
+                            : 'max-w-full max-h-56 sm:max-h-64 object-contain bg-white'
+                        }
                         style={
                           rotate
                             ? { transform: `rotate(${rotate}deg)` }
